@@ -38,11 +38,11 @@ public class Log4j2DemoApplication implements ApplicationRunner {
 */	
 	@Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
-        logger.debug("Debugging log");
-        logger.info("Info log");
-        logger.warn("Hey, This is a warning!");
-        logger.error("Oops! We have an Error. OK");
-        logger.fatal("Damn! Fatal error. Please fix me.");
+        logger.debug("Debugging log from Log4j2DemoApplication");
+        logger.info("Info log from Log4j2DemoApplication");
+        logger.warn("Hey, This is a warning! from Log4j2DemoApplication");
+        logger.error("Oops! We have an Error. OK from Log4j2DemoApplication");
+        logger.fatal("Damn! Fatal error. Please fix me. from Log4j2DemoApplication");
     }
 
 }
