@@ -10,9 +10,23 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
 
+        <!-- File Appender -->
+        <File name="FileAppenderWelcomeController" fileName="logs/log4j2-welcome-controller-logfile.log">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+        </File>
+
+        <!-- File Appender -->
+        <File name="FileAppenderHelloController" fileName="logs/log4j2-hello-controller-logfile.log">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+        </File>
+
         <!-- Rolling File Appender -->
-        <RollingFile name="RollingFileAppender" fileName="logs/log4j2-demo.log" 
-                    filePattern="logs/log4j2-demo-%d{yyyy-MM-dd}-%i.log">
+        <RollingFile name="RollingFileAppender" fileName="logs/log4j2-rolling.log" 
+                    filePattern="logs/log4j2-rolling-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <Pattern>${LOG_PATTERN}</Pattern>
             </PatternLayout>
@@ -23,13 +37,13 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="com.example.log4j2demo" level="debug" additivity="false">
-            <AppenderRef ref="ConsoleAppender" />
-            <AppenderRef ref="RollingFileAppender"/>
+        <Logger name="com.example.log4j2demo" level="trace">
+            <AppenderRef ref="FileAppenderWelcomeController"/>
+            <AppenderRef ref="FileAppenderHelloController"/>
         </Logger>
 
-        <Root level="info">
-            <AppenderRef ref="ConsoleAppender" />
+        <Root level="debug">
+            <AppenderRef ref="ConsoleAppender"/>
         </Root>
     </Loggers>
 </Configuration>
