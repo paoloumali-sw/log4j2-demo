@@ -1,15 +1,18 @@
 package com.example.log4j2demo;
 
+/*
 import java.util.Arrays;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+*/
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
@@ -19,7 +22,7 @@ public class Log4j2DemoApplication implements ApplicationRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(Log4j2DemoApplication.class, args);
 	}
-
+/*
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
@@ -32,7 +35,7 @@ public class Log4j2DemoApplication implements ApplicationRunner {
             }
 		};
 	}
-	
+*/	
 	@Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
         logger.debug("Debugging log");
